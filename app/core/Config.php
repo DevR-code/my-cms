@@ -16,7 +16,7 @@ class Config{
         "login_cookie_name" => 'm#lc#nm'       //login cookie name
     ];
 
-    public static function get(){
+    public static function get($key){
         return array_key_exists($key, self::$config) ? self::$config[$key] : NULL;
     }
 }
