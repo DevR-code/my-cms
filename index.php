@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-use \Core\Config;
+use \Core\{Config, Router};
 //define constant
 define('PROOT', __DIR__);
 define('DS', DIRECTORY_SEPARATOR);  //   "/"
@@ -17,8 +17,21 @@ spl_autoload_register(function ($className) {
     if(file_exists($path)){
         include($path);
     }
-    var_dump($path);
+    //var_dump($path);
 
 });
 
-Config::get('db_name');
+$rootDir = Config::get('root_dir');
+// $rootDir = Config::get("root_dir");
+define('ROOT', $rootDir);
+//var_dump($rootDir);
+//var_dump(ROOT);
+
+$url = $_SERVER['REQUEST_URI'];    //super global
+$url = str_replace(ROOT, '', $url);
+$url = preg_replace('/(\?.+)/', '', $url);
+Router::route($url);
+//var_dump($url);
+
+// Config::get('db_name');
+//var_dump($db_name);
