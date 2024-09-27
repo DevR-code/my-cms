@@ -29,8 +29,9 @@ define('ROOT', $rootDir);
 
 $url = $_SERVER['REQUEST_URI'];    //super global
 $url = str_replace(ROOT, '', $url);
-$url = preg_replace('/(\?.+)/', '', $url);
+$url = preg_replace('/(\?.+)/', '', $url); 
 Router::route($url);
+
 //var_dump($url);
 
 // Config::get('db_name');
