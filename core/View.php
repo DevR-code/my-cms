@@ -68,5 +68,12 @@ class View {
         }
     }
 
+    public function partial($path){
+        $fullPath = PROOT . DS . 'app' . DS . 'views' . DS . $path . '.php';
+        if(file_exists($fullPath)){
+            include($fullPath);
+        }
+    }
+
 
 }

@@ -14,6 +14,7 @@
 <?php $this->content('head');?>
 </head>
 <body>
+    <?php $this->partial('partials/navMenu'); ?>
     <div class="container-fluid p-4">
         <?php $this -> content('content'); ?>
     </div>
