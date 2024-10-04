@@ -2,13 +2,17 @@
 
 namespace App\Controllers;
 
-use Core\Controller;
+
+use Core\{DB, Controller, H};
 
 
 class BlogController extends Controller {
 
     public function indexAction(){
-        $this->view->setSiteTitle('My Blog');
+        $db = DB::getInstance();
+        H::dnd($db, false);
+       
+        $this->view->setSiteTitle('Latest articles');    //you can set the blog title here  --before rendering
         $this->view->render();       
     }
 }

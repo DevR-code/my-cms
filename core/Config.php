@@ -10,7 +10,7 @@ class Config{
         "default_layout" => 'default',      //default ;layout
         "default_site_title" => 'Freewriter',   //default site title
         "db_host" => '127.0.0.1',     //DB host ---faster with IP address
-        "db_name" => 'cms',           //DB Name
+        "db_name" => 'cms_db',           //DB Name
         "db_user" => 'root',         //DB user
         "db_password" => '',       //DB password
         "login_cookie_name" => 'm#lc#nm'       //login cookie name
